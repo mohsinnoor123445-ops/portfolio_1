@@ -1,0 +1,466 @@
+/* 
+    ROOT VARIABLES
+   Purpose: Global colors, fonts, shadows, etc. define karna 
+   taake pure website me ek consistent theme rahe.
+ */
+:root {
+  --bg-color: #1c1c28;
+  --text-color: #fff;
+  --accent-color: #f4c542;
+  --secondary-text: #aaa;
+  --light-text: #ccc;
+  --card-bg: #2a2a3d;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --font-main: "Poppins", sans-serif;
+}
+
+/* 
+    BASIC RESET
+   Purpose: Browser ke default margin/padding ko remove karna 
+   aur box-sizing ko border-box par set karna for consistent layout.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+    BODY SECTION
+   Purpose: Page ke overall look ko define karna 
+   (background color, text color, font aur alignment)
+*/
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 1200px;
+  background-color: var(--bg-color);
+  padding: 0 20px;
+}
+
+/* 
+    HEADER SECTION
+   Purpose: Logo, navigation aur social media icons ka layout set karna.
+*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.logo:hover {
+  text-shadow: 0 0 15px rgba(244, 197, 66, 0.8);
+  transform: scale(1.05);
+}
+
+/* 
+    NAVIGATION BAR
+   Purpose: Menu items ko horizontally display karna aur hover effect dena.
+ */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+nav a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: 0.3s;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s;
+}
+nav a:hover {
+  color: var(--accent-color);
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+/* 
+    SOCIAL ICONS (HEADER)
+   Purpose: Header ke right side me social icons set karna.
+ */
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+.social-icons a {
+  color: var(--light-text);
+  margin-left: 20px;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+.social-icons a:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+  text-shadow: 0 0 12px rgba(244, 197, 66, 0.7);
+}
+
+/* 
+    HERO SECTION
+   Purpose: Developer introduction, main image aur services info show karna.
+ */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 0;
+}
+.hero-left {
+  flex: 1;
+  padding-right: 50px;
+}
+.hero-left h2 {
+  font-size: 2rem;
+  color: var(--accent-color);
+  letter-spacing: 2px;
+}
+.hero-left h1 {
+  font-size: 3.8rem;
+  margin: 15px 0;
+  font-weight: 700;
+}
+.hero-left p {
+  color: var(--secondary-text);
+  max-width: 500px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* 
+    CENTER IMAGE (Hero Image)
+   Purpose: Developer ki profile ya main image dikhana.
+ */
+.center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  margin-right: 100px;
+}
+.center-image img {
+  width: 190px;
+  border-radius: 20px;
+  transition: transform 0.6s ease;
+  transform: scale(3.5);
+}
+
+/* 
+    HERO RIGHT (Services and Socials)
+   Purpose: Hero ke right side me services aur social links dikhana.
+ */
+.hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hero-right h3 {
+  color: var(--accent-color);
+  font-size: 1.3rem;
+}
+.hero-right p {
+  color: #bbb;
+  line-height: 1.6;
+}
+.hero-right a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.hero-right a:hover {
+  transform: translateX(5px);
+}
+
+/* 
+   1 HERO SOCIAL ICONS
+   Purpose: Hero section ke social icons ko interactive banana. */
+.hero-socials {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.hero-socials a {
+  color: var(--light-text);
+  font-size: 1.4rem;
+  transition: all 0.35s ease;
+  position: relative;
+}
+.hero-socials a:hover {
+  color: var(--accent-color);
+  transform: scale(1.25);
+  text-shadow: 0 0 12px rgba(244, 197, 66, 0.7);
+}
+
+/* 
+   1 TRUSTED BY SECTION
+   Purpose: Companies ke logos show karna jinke sath kaam hua hai.
+ */
+.trusted-by {
+  text-align: center;
+  margin: 80px 0 40px;
+}
+.trusted-by h2 {
+  color: var(--accent-color);
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+
+/* 
+   1 BRAND SECTION
+   Purpose: Logos ko container me align karna aur hover animation dena.
+*/
+.brand-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1c1c;
+  padding: 25px 0;
+  border-radius: 15px;
+  box-shadow: 0 0 15px var(--shadow);
+}
+.brand-logos {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 70%;
+  flex-wrap: wrap;
+}
+.brand-logos img {
+  width: 60px;
+  filter: brightness(0.9);
+  transition: 0.3s;
+}
+.brand-logos img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* 
+   1 SERVICES SUMMARY
+   Purpose: Freelancer ke experience aur stats dikhana.
+*/
+.services-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  padding: 100px 0;
+  flex-wrap: wrap;
+}
+.services-summary .left {
+  flex: 1;
+}
+.services-summary .left h2 {
+  font-size: 2.2rem;
+  color: var(--text-color);
+}
+.services-summary .left p {
+  color: var(--secondary-text);
+  max-width: 500px;
+  margin-bottom: 45px;
+  line-height: 1.7;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 50px;
+}
+.stats div {
+  display: flex;
+  flex-direction: column;
+}
+.stats h3 {
+  color: #f4c542;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.stats p {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+
+/* 
+   1 SERVICE LIST
+   Purpose: Alag-alag services ke cards banana with image.
+ */
+
+.services-summary .right {
+  flex: 1;
+  text-align: left;
+}
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.service-item {
+  background-color: #2a2a3d;
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.service-item:hover {
+  background-color: #f4c542;
+  color: #000;
+  transform: translateY(-4px);
+}
+
+
+#photo_1,
+#photo_2,
+#photo_3 {
+  height: 50px;
+  width: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+/* 
+   1 MAIN SERVICES
+   Purpose: 3 core service boxes ka layout aur hover effect.
+*/
+.main-services {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 80px 0;
+  flex-wrap: wrap;
+}
+.box {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  width: 30%;
+  transition: 0.3s;
+  min-width: 280px;
+}
+.box:hover {
+  background-color: var(--accent-color);
+  color: #000;
+  transform: translateY(-10px);
+}
+
+/* 
+   1 IMAGES AND ICONS
+   Purpose: Header aur Hero section ke icons aur images ki styling.
+*/
+.icon,
+.icon2 {
+  width: 60px;
+  height: 50px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.icon:hover,
+.icon2:hover {
+  transform: scale(1.1);
+}
+.logo1,
+.logo2,
+.logo3,
+.logo4 {
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+}
+
+/* 
+   1 MEDIA QUERIES
+   Purpose: Website ko responsive banana (mobile aur tablet ke liye).
+ */
+
+/* Large Screens (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .container {
+    width: 92%;
+    margin: 0 auto;
+  }
+  .hero {
+    gap: 40px;
+  }
+}
+
+/* Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .services-summary,
+  .main-services {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .box {
+    width: 85%;
+  }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .center-image img {
+    width: 80%;
+  }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.4rem;
+  }
+  .box {
+    width: 95%;
+  }
+}
