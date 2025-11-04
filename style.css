@@ -464,3 +464,16 @@ nav a:hover::after {
     width: 95%;
   }
 }
+@media (max-width: 768px) {
+  .center-image {
+    margin: 40px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .center-image img {
+    transform: scale(1.5);
+    margin: 0 auto;
+    width: 150px;
+  }
+}
